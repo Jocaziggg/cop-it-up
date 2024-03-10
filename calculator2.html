@@ -1,0 +1,576 @@
+<?php
+include 'connect3.php';
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="authoring-tool" content="Adobe_Animate_CC">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <title>COP Calculator</title>
+    <!-- Bootstrap -->
+	<link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+	<link href="css/Tool.css" rel="stylesheet">
+   <link href="css/main_css.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<style type="text/css">
+	</style>
+
+  </head>
+  <body>
+  	<!-- body code goes here -->
+    <div class = "Container" id="Container">
+      <div class="Header dropshadow" id="Header">
+		<div class="Logo" id="Logo"><img src="Media/Logo1.png" width="215" height="69" alt=""/>
+			<div class="navmanu" id="navmanu">HELP | EXIT | CONTACT
+		  </div></div>
+      </div>
+      <div class="Content" id="Content">
+        <div class="ToolContainer" id="ToolContainer">
+          <div class="Rooms" id="Rooms">
+			  
+			  <!--<section class="product">
+        <button class="pre-btn"><img src="images/arrow.png" alt=""></button>
+        <button class="nxt-btn"><img src="images/arrow.png" alt=""></button>
+        <div class="product-container">
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="discount-tag">50% off</span>
+                    <img src="Slider/product-slider/images/card1.jpg" class="product-thumb" alt="">
+                    <button class="card-btn">add to wishlist</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">brand</h2>
+                    <p class="product-short-description">a short line about the cloth..</p>
+                    <span class="price">$20</span><span class="actual-price">$40</span>
+                </div>
+			</div>
+		 </div>
+			</section>-->
+			</div>
+          <div id="Tool">
+		    <div class="caorusel">
+            <div class="slider">
+               <section class="section1">
+                  <div class="sc_page1">
+                     <div class="sc_page1_title">Welcome to COP tool</div>
+                     <div class="sc_page1_desc">This Tool will help zou decide about which Heating Pump is the best fitting zour needs, so that you can have the most optimal heating device. This will save you money and energy to all which is another positive impact on envirement.
+                     </div>
+                     <div class="sc_page1_confirm">During the process, tool will ned you to add some informations which are not counted as personal.
+                     </div>
+                     <div class="sc_page1_submit">
+                        <button class="btn_start" onclick="init1()" style="margin:0px;">START</button>
+                     </div>
+                  </div>
+               </section>
+               <section class="section2">
+                  <div class="sc_page2">
+                  <div class="sc_page2_title">Add new room</div>
+            <form action="">
+            <div class="room_container">
+              <div class="seg seg1">
+                <div class="formblock"><label for="room_name">Enter Room name</label><br>
+                <input type="text" id="room_name" name ="room_name" class="inputic1" placeholder="Living room, Bathroom, etc..." required></div>
+              </div>
+
+              <div class="seg seg2">
+                 Please add the room name. <br>We recomand you to use standard room nameing (Leaving room, sleeping room, etc...), <br> so that your end report looks beter.
+
+               
+              </div>
+
+              <div class="seg seg3">
+               <div class="formblock"><label for="room_S-Walls">Enter total wall surface (m2)</label><br>
+                    <input type="text" id="room_S-Walls" name ="room_S-Walls" class="inputic1" placeholder="Total wall surface (m2)" required></div>
+              </div>
+
+              <div class="seg seg4">
+                
+                  <div id="animation_container" style="font-family: 'Ubuntu', sans-serif; background-color:rgba(255, 255, 255, 1.00); width:920px; height:144px">
+                    <canvas id="canvas" width="920" height="144" style="font-family: 'Ubuntu', sans-serif; position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
+                    <div id="dom_overlay_container" style="font-family: 'Ubuntu', sans-serif; pointer-events:none; overflow:hidden; width:920px; height:144px; position: absolute; left: 0px; top: 0px; display: block;">
+                    </div>
+                  </div>
+                
+              </div>
+
+              <div class="seg seg5">
+               <div class="formblock"><label for="room_S-Floor">Enter floor surface (m2)</label><br>
+                    <input type="text" id="room_S-Floor" name ="room_S-Floor" class="inputic1" placeholder="Floor surface (m2)" required></div>
+              </div>
+
+              <div class="seg seg6">
+                <iframe class="iframe1" src="Model2_Floor.html" width="920" height="144" scrolling="no"></iframe>
+              </div>
+
+              <div class="seg seg7">
+               <div class="formblock"><label for="room_S-ceiling">Enter ceiling surface (m2)</label><br>
+                    <input type="text" id="room_S-ceiling" name ="room_S-ceiling" class="inputic1" placeholder="Ceiling surface (m2)" required></div>
+              </div>
+
+              <div class="seg seg8">
+                <iframe class="iframe1" src="Model3_Ceiling.html" width="920" height="144" scrolling="no">
+
+                </iframe></div>
+              
+              <div class="seg seg9">
+               <div class="formblock"><label for="room_S-Windows">Enter total windows surface (m2)</label><br>
+                    <input type="text" id="room_S-Windows" name ="room_S-Windows" class="inputic1" placeholder="Total windows surface (m2)" required></div>
+              </div>
+
+              <div class="seg seg10"><iframe class="iframe1" src="Model3_Windows.html" width="920" height="144" scrolling="no">
+
+              </iframe></div>
+
+              <div class="seg seg11">
+               <div class="formblock"><label for="room_S-Doors">Enter total Doors surface (m2)</label><br>
+                    <input type="text" id="room_S-Doors" name ="room_S-Doors" class="inputic1" placeholder="Total Doors surface (m2)" required></div>
+              </div>
+
+              <div class="seg seg12"><iframe class="iframe1" src="Model3_Dors.html" width="920" height="144" scrolling="no">
+
+              </iframe></div>
+
+              <div class="seg seg13">
+               <div class="formblock"><label for="room_Temp-out">Min. Expected temperature outside (c)</label><br>
+                    <input type="text" id="room_Temp-out" name ="room_Temp-out" class="inputic1" placeholder="Please add value in c" required></div>
+              </div>
+
+              <div class="seg seg14">Here you enter the minimum expected temperature that can be outside<br>You can check some historical data on this. <br> (For example "-12c")</div>
+
+              <div class="seg seg15">
+               <div class="formblock"><label for="room_Temp-in">Desired temperature inside (c)</label><br>
+                    <input type="text" id="room_Temp-in" name ="room_Temp-in" class="inputic1" placeholder="Please add value in c" required></div>
+              </div>
+
+              <div class="seg seg16">Here please enter the maximum desired temperature inside.<br>(Best proposed 22c)</div>
+
+              <div class="seg seg17">
+               <div class="formblock"><label for="btn_NEXT1">Go to the next section</label><br>
+                <button id="btn_NEXT1" class="btn_NEXT1">NEXT</button>
+              </div></div>
+              <div class="seg seg18"></div>
+            </div>
+         </form>
+
+
+               </div>
+               </section>
+               <section class="section3">
+                <div class="sc_page2">
+                  <div class="sc_page2_title">Calculate U/R value</div>
+                  <div class="sc_page1_desc">Here we will calculate U/R value for Walls, Floor and Ceiling. U-Value for dors and windows you can get from the manufacterer and include in calculation. Othervise, the standard values will be taken (not affecting significatlly the end result).</div>
+
+                  <div class="room_container1"> 
+                  <div class="CalcHold clearfix">
+                    <div class="calc calc1">
+                     <div id="dynamic_field">
+                        <h2>Add tickness of wall material</h2>
+                        <div class="form-row" >
+                            <div class="col">
+                              <?php
+                                $selected = 'Material';
+                                $sql1 = "SELECT * FROM Materials";
+                                if($result = mysqli_query($sql1)){
+                                    while($row1 = mysqli_fetch_array($result)){
+                                        $Material = $row1;
+                                        echo "<select>";
+                                foreach($Marterial as $Mat){
+                                    if($selected = $Mat){
+                                        echo "<option selected = 'selected' value='$Mat'>$Mat</option> ";
+                                    }else{
+                                        echo "<option value='$Mat'>$Mat</option> ";
+                                    }
+                                }
+
+                                echo "</select>";
+                                    }
+                                }
+
+                                ?>
+
+                              
+                            </div>
+                            <div class="col"><div class= "munit">
+                                <input type="text" class="inputic1 tic" name="von[]" placeholder="Tickness"><h3>mm</h3></div>
+                            </div>
+                            <div class="col">
+                                <td><button type="button" name="add" id="add" class="btn btn-success"><i class="fa fa-plus"></i></button></td>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="dis dis1"><iframe class="iframe1" src="Model4_Wall_layers.html" width="920" height="288" scrolling="no">
+
+                    </iframe></div>
+                  </div>
+                  <div class="CalcHold clearfix">
+                     <div class="calc calc1">
+                        <div id="dynamic_field2">
+                           <h2>Add tickness of floor material</h2>
+                           <div class="form-row">
+
+                               <div class="col">
+                                   <input type="text" id="Mat2" class="inputic1 mat" name="mange[]" placeholder="Material">
+                               </div>
+                               <div class="col"><div class= "munit">
+                                   <input type="text" class="inputic1 tic" name="bezeichnung[]" placeholder="Tickness"><h3>mm</h3></div>
+                               </div>
+                               <div class="col">
+                                   <td><button type="button" name="add" id="add2" class="btn btn-success"><i class="fa fa-plus"></i></button></td>
+                               </div>
+                           </div>
+                       </div>
+                     </div>
+                     <div class="dis dis1"><iframe class="iframe1" src="Model4_Floor_layers.html" width="920" height="288" scrolling="no"></iframe></div>
+                   </div>
+                   <div class="CalcHold clearfix">
+                     <div class="calc calc1">
+                        <div id="dynamic_field3">
+                           <h2>Add tickness of ceiling material</h2>
+                           <div class="form-row">
+                               <div class="col">
+                                   <input type="text" id="Mat3" class="inputic1 mat" name="offene_pukte[]" placeholder="Material">
+                               </div>
+                               <div class="col"><div class= "munit">
+                                   <input type="text" class="inputic1 tic" name="intern[]" placeholder="Tickness"><h3>mm</h3></div>
+                               </div>
+
+                               <div class="col">
+                                   <td><button type="button" name="add" id="add3" class="btn btn-success"><i class="fa fa-plus"></i></button></td>
+                               </div>
+                           </div>
+                       </div>
+                     </div>
+                     <div class="dis dis1"><iframe class="iframe1" src="Model4_Ceiling_layers.html" width="920" height="288" scrolling="no"></iframe></div>
+                   </div>
+                   <div class="CalcHold clearfix">
+                     <div class="calc calc1">
+                      <div id="dynamic_field2">
+                        <div class="form-row">
+                            <div class="col"><h2>U value Doors</h2>
+                                <input type="text" id="Mat2" class="inputic1 mat" name="mange[]" placeholder="Doors type/Material">
+                            </div>
+                            <div class="col"><h2>U-value</h2>
+                                <input type="text" class="inputic1 tic" name="bezeichnung[]" placeholder="U-value">
+                            </div>
+                     </div>
+                    </div>
+                  </div>
+                     <div class="dis dis1">U-value for your doors you can get from the manufacturer. <br> If you are not able to find it, please leave the field emphty. <br> Standard averige value will be taken in count. <br> (Does not make much difference)</div>
+                   </div>
+
+                   <div class="CalcHold clearfix">
+                     <div class="calc calc1">
+                      <div id="dynamic_field2">
+                        <div class="form-row">
+
+                            <div class="col"><h2>U value Windows</h2>
+                                <input type="text" id="Mat2" class="inputic1 mat" name="mange[]" placeholder="Windows type/Material">
+                            </div>
+                            <div class="col"><h2>U-value</h2>
+                                <input type="text" class="inputic1 tic" name="bezeichnung[]" placeholder="U-value">
+                            </div>
+                     </div>
+                    </div>
+                     </div>
+                     <div class="dis dis1">The story is the same as for doors.</div>
+                   </div>
+
+                   <div class="CalcHold clearfix">
+                     <div class="calc calc1">
+                      <div class="formblock"><label for="btn_NEXT1">Go to the next section</label><br>
+                        <button id="btn_NEXT2" class="btn_NEXT1">NEXT</button>
+                     </div>
+                     <div class="dis dis1"></div>
+                   </div>
+                  </div>
+                </div>
+
+               </section>
+               <section class="section4">
+                <div class="sc_page2">
+                  <div class="sc_page2_title">Radiators</div>
+                  <div class="sc_page1_desc">In case you are using radiators for heating in this room, you can calculate needed radiator surface here. Also if you have radiators already instaled, you can check the eficiency of current instalation.
+                  </div>
+                  <div class="RadioBox">
+                    <div class= "formblock2">
+                    <label for="radio1">Existing instalation</label><br>
+                    <button onclick="show1()" class="btn_radio" name="radiobtn" id="radio1" value=""></button>
+                    </div>
+                    <div class= "formblock2">
+                    <label for="radio2">New instalation</label><br>
+                    <button onclick="show2()" class="btn_radio" name="radiobtn" id="radio2" value=""></button>
+                    </div>
+                    <button onclick="show3()" id="btn_SKIP3" class="btn_NEXT1">SKIP</button>
+                  </div>
+
+                  <div class="room_container1">
+                     <div class="CalcHold clearfix">
+                      <div id="rad1">
+                       <div class="calc calc1">
+                        <div id="dynamic_field2">
+                          <div class="form-row2">
+  
+                              <div class="col"><h2>Radiator type</h2>
+                                  <select id="Mat22" class="inputic1 mat1" name="mange[]" placeholder="Type">
+                                    <option value="select">Select Type</option>
+                                    <option value="T11">T11</option>
+                                    <option value="T21">T21</option>
+                                    <option value="T22">T22</option>
+                                    <option value="T33">T33</option>
+                                  </select>
+                              </div><br>
+                              <div class="col"><h2>Radiator surface</h2>
+                                  <input type="text" id="Mat12" class="inputic1 tic1" name="bezeichnung[]" placeholder="Surface">
+                              </div>
+                       </div>
+                      </div>
+                       </div>
+                       <div class="dis dis1">Select the radiator type and add the combined surface of all radiators in square meters.<br>
+                        Below you can find the most common radiator types so you can recognize which tipe you have.<br><br><br>
+                      <img src="images/Radiator-Types-263x300.png" alt="">
+                    </div>
+                     </div>
+                    </div>
+
+                    
+                     <div class="CalcHold clearfix">
+                      <div id="rad2">
+                        <div class="calc calc1">
+                         <div id="dynamic_field2">
+                           <div class="form-row2">
+   
+                               <div class="col"><h2>Radiator type</h2>
+                                   <select id="Mat22" class="inputic1 mat1" name="mange[]" placeholder="Type">
+                                    <option value="select">Select Type</option>
+                                    <option value="T11">T11</option>
+                                    <option value="T21">T21</option>
+                                    <option value="T22">T22</option>
+                                    <option value="T33">T33</option>
+                                  </select>
+                               </div><br>
+                               <div class="col"><h2>Radiator surface</h2>
+                                   <input type="text" id="Mat13"class="inputic1 tic1" name="bezeichnung[]" placeholder="Surface">
+                               </div>
+                        </div>
+                       </div>
+                        </div>
+                        <div class="dis dis1">Select the radiator type and add the surface of all radiators in square meters.<br>
+                        Below you can find the most common radiator types. <br> Please select the one that fits your needs by reviewing the calculation.<br><br><br>
+                      <img src="images/Radiator-Types-263x300.png" alt="">
+                      </div>
+                      </div>
+                      </div>
+                     
+
+                     
+                      <div class="CalcHold clearfix">
+                        <div id = "rad3">
+                       <div class="calc calc1">
+                        <div class="formblock"><label for="btn_NEXT1"></label><br>
+                          <button id="btn_NEWR" class="btn_NEXT1">ADD NEW ROOM</button><button id="btn_COMPLETE1" class="btn_NEXT1">COMPLETE CALCULATION</button>
+                       </div>
+                      </div>
+                       <div class="dis dis1"></div>
+                     </div>
+                    </div>
+                  
+                  </div>
+                </div>
+
+               </section>
+               <section class="section5">
+                <div class="sc_page2">
+                  <div class="sc_page2_title">Complete calculation</div>
+                  <div class="sc_page1_desc">Please provide a few additional onformations before submiting.
+                  </div>
+                <div class="room_container">
+                  <div class="seg seg1">
+                    <div class="formblock"><label for="room_name">Enter Room name</label><br>
+                    <input type="text" id="room_name" name ="room_name" class="inputic1" placeholder="Living room, Bathroom, etc..." required></div>
+                  </div>
+    
+                  <div class="seg seg2">
+                     Text
+                  </div>
+    
+                  <div class="seg seg3">
+                   <div class="formblock"><label for="room_S-Walls">Enter total wall surface (m2)</label><br>
+                        <input type="text" id="room_S-Walls" name ="room_S-Walls" class="inputic1" placeholder="Total wall surface (m2)" required></div>
+                  </div>
+    
+                  <div class="seg seg4">
+                    
+                  </div>
+    
+                  <div class="seg seg5">
+                   <div class="formblock"><label for="room_S-Floor">Enter floor surface (m2)</label><br>
+                        <input type="text" id="room_S-Floor" name ="room_S-Floor" class="inputic1" placeholder="Floor surface (m2)" required></div>
+                  </div>
+    
+                  <div class="seg seg6">a</div>
+    
+                  <div class="seg seg7">
+                   <div class="formblock"><label for="room_S-ceiling">Enter ceiling surface (m2)</label><br>
+                        <input type="text" id="room_S-ceiling" name ="room_S-ceiling" class="inputic1" placeholder="Ceiling surface (m2)" required></div>
+                  </div>
+    
+                  <div class="seg seg8">a</div>
+                  
+                  <div class="seg seg9">
+                   <div class="formblock"><label for="room_S-Windows">Enter total windows surface (m2)</label><br>
+                        <input type="text" id="room_S-Windows" name ="room_S-Windows" class="inputic1" placeholder="Total windows surface (m2)" required></div>
+                  </div>
+    
+                  <div class="seg seg10">a</div>
+    
+                  <div class="seg seg11">
+                   <div class="formblock"><label for="room_S-Doors">Enter total Doors surface (m2)</label><br>
+                        <input type="text" id="room_S-Doors" name ="room_S-Doors" class="inputic1" placeholder="Total Doors surface (m2)" required></div>
+                  </div>
+    
+                  <div class="seg seg12">a</div>
+    
+                  <div class="seg seg13">
+                   <div class="formblock"><label for="room_Temp-out">Min. Expected temperature outside (c)</label><br>
+                        <input type="text" id="room_Temp-out" name ="room_Temp-out" class="inputic1" placeholder="Please add value in c" required></div>
+                  </div>
+    
+                  <div class="seg seg14">a</div>
+    
+                  <div class="seg seg15">
+                   <div class="formblock"><label for="room_Temp-in">Desired temperature inside (c)</label><br>
+                        <input type="text" id="room_Temp-in" name ="room_Temp-in" class="inputic1" placeholder="Please add value in c" required></div>
+                  </div>
+    
+                  <div class="seg seg16">a</div>
+    
+                  <div class="seg seg17">
+                   <div class="formblock"><label for="btn_NEXT1">Go to the next section</label><br>
+                    <button id="btn_NEXT1" class="btn_NEXT1">NEXT</button>
+                  </div></div>
+                  <div class="seg seg18">a</div>
+                </div>
+              </div>
+
+               </section>
+            </div>
+            
+          </div>
+
+          </div>
+          <div class="controls">
+            <ul>
+               <li id="li1" class="selected"></li>
+               <li id="li2">Object details</li>
+               <li id="li3">U/R value</li>
+               <li id="li4">Radiators</li>
+               <li id="li5">Submit</li>
+            </ul>
+         </div>
+		</div>
+      <div class="Footer dropshadow" id="Footer">FOOTER CONTENT</div>
+    </div></div>
+  <!-- Page 3_Add input fields--> 
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function () {
+                var i = 1;
+                $('#add').click(function () {
+                    i++;
+                    $('#dynamic_field').append('<div class="form-row" id="row' + i + '"> <div class="col"><input type="text" class="inputic1 mat" name="durchgefuhrte_arbeiten[]" placeholder="Material"></div> <div class="col"> <div class= "munit"><input type="text" class="inputic1 tic" name="von[]" placeholder="Tickness"><h3>mm</h3></div></div> <div class="col"> <td><button type="button" name="add" class="btn btn-danger btn_remove" id="' + i + '"><i class="fa fa fa-trash"></i></button></td> </div> </div>');
+                });
+                $(document).on('click', '.btn_remove', function () {
+                    var button_id = $(this).attr("id");
+
+                    $('#row' + button_id + '').remove();
+                });
+
+
+
+                $('#add2').click(function () {
+                    i++;
+                    $('#dynamic_field2').append('<div class="form-row"  id="row2' + i + '"> <div class="col"> <input type="text" class="inputic1 mat" name="mange[]" placeholder="Material"> </div> <div class="col"> <div class= "munit"><input type="text" class="inputic1 tic"  name="bezeichnung[]" placeholder="Tickness"><h3>mm</h3></div></div> <div class="col"> <td><button type="button" name="add" class="btn btn-danger btn_remove2" id="' + i + '"><i class="fa fa fa-trash"></i></button></td> </div> </div>');
+                });
+                $(document).on('click', '.btn_remove2', function () {
+                    var button_id = $(this).attr("id");
+
+                    $('#row2' + button_id + '').remove();
+                });
+
+
+                $('#add3').click(function () {
+                    i++;
+                    $('#dynamic_field3').append('<div class="form-row" id="row3' + i + '"> <div class="col"> <input type="text" class="inputic1 mat"  name="offene_pukte[]" placeholder="Material"> </div> <div class="col"><div class= "munit"><input type="text" class="inputic1 tic" name="intern[]" placeholder="Tickness"><h3>mm</h3></div></div> <div class="col"> <td><button type="button" name="add"  class="btn btn-danger btn_remove3" id="' + i + '"><i class="fa fa fa-trash"></i></button></td> </div> </div>');
+                });
+                $(document).on('click', '.btn_remove3', function () {
+                    var button_id = $(this).attr("id");
+
+                    $('#row3' + button_id + '').remove();
+                });
+
+            });
+        </script>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+	<script src="js/jquery-3.4.1.min.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/popper.min.js"></script> 
+  <script src="js/bootstrap-4.4.1.js"></script>
+  <script src="Tool.js"></script>
+
+  <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+<script src="Model1_Walls.js?1684073915538"></script>
+<script>
+var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+function init1() {
+	canvas = document.getElementById("canvas");
+	anim_container = document.getElementById("animation_container");
+	dom_overlay_container = document.getElementById("dom_overlay_container");
+	var comp=AdobeAn.getComposition("4EAFFC76CFB54346B84A4C537F52DCA6");
+	var lib=comp.getLibrary();
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
+	var lib=comp.getLibrary();
+	loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt, comp) {
+	var images=comp.getImages();	
+	if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }	
+}
+function handleComplete(evt,comp) {
+	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+	var lib=comp.getLibrary();
+	var ss=comp.getSpriteSheet();
+	var queue = evt.target;
+	var ssMetadata = lib.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	exportRoot = new lib.Model1_Walls();
+	stage = new lib.Stage(canvas);	
+	//Registers the "tick" event listener.
+	fnStartAnimation = function() {
+		stage.addChild(exportRoot);
+		createjs.Ticker.framerate = lib.properties.fps;
+		createjs.Ticker.addEventListener("tick", stage);
+	}	    
+	//Code to support hidpi screens and responsive scaling.
+	AdobeAn.makeResponsive(false,'both',false,1,[canvas,anim_container,dom_overlay_container]);	
+	AdobeAn.compositionLoaded(lib.properties.id);
+	fnStartAnimation();
+}
+</script>
+
+  </body>
+</html>

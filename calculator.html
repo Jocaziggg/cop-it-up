@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <title>COP Calculator</title>
+    <!-- Bootstrap -->
+	<link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+	<link href="css/Tool.css" rel="stylesheet">
+   <link href="css/main_css.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<style type="text/css">
+	</style>
+  </head>
+  <body>
+  	<!-- body code goes here -->
+    <div class = "Container" id="Container">
+      <div class="Header dropshadow" id="Header">
+		<div class="Logo" id="Logo"><img src="Media/Logo1.png" width="215" height="69" alt=""/>
+			<div class="navmanu" id="navmanu">HELP | EXIT | CONTACT
+		  </div></div>
+      </div>
+      <div class="Content" id="Content">
+        <div class="ToolContainer" id="ToolContainer">
+          <div class="Rooms" id="Rooms">
+			  
+			  <!--<section class="product">
+        <button class="pre-btn"><img src="images/arrow.png" alt=""></button>
+        <button class="nxt-btn"><img src="images/arrow.png" alt=""></button>
+        <div class="product-container">
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="discount-tag">50% off</span>
+                    <img src="Slider/product-slider/images/card1.jpg" class="product-thumb" alt="">
+                    <button class="card-btn">add to wishlist</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">brand</h2>
+                    <p class="product-short-description">a short line about the cloth..</p>
+                    <span class="price">$20</span><span class="actual-price">$40</span>
+                </div>
+			</div>
+		 </div>
+			</section>-->
+			</div>
+          <div id="Tool">
+		    <div class="caorusel">
+            <div class="slider">
+               <section class="section1">
+                  <div class="sc_page1">
+                     <div class="sc_page1_title">Welcome to COP tool</div>
+                     <div class="sc_page1_desc">This Tool will help zou decide about which Heating Pump is the best fitting zour needs, so that you can have the most optimal heating device. This will save you money and energy to all which is another positive impact on envirement.
+                     </div>
+                     <div class="sc_page1_confirm">During the process, tool will ned you to add some informations which are not counted as personal.
+                     </div>
+                     <div class="sc_page1_submit">
+                        <button class="btn_start">START</button>
+                     </div>
+                  </div>
+               </section>
+               <section class="section2">
+                  <div class="sc_page2">
+                  <div class="sc_page2_title">Add new room</div>
+					  <div class="room_container"> 
+              <div class="seg seg1">
+                <Form><label for="room_name">Enter Room name</label><br>
+                <input type="text" id="room_name" name ="room_name" class="inputic1" placeholder="Living room, Bathroom, etc..." required></Form>
+              </div>
+
+              <div class="seg seg2">
+                 Text
+              </div>
+
+              <div class="seg seg3">
+                 <Form><label for="room_S-Walls">Enter total wall surface (m2)</label><br>
+                    <input type="text" id="room_S-Walls" name ="room_S-Walls" class="inputic1" placeholder="Total wall surface (m2)" required></Form>
+              </div>
+
+              <div class="seg seg4"><img src="I:\Sites\cop-it-up.com\Media\4199325-200.png"></div>
+
+              <div class="seg seg5">
+                 <Form><label for="room_S-Floor">Enter floor surface (m2)</label><br>
+                    <input type="text" id="room_S-Floor" name ="room_S-Floor" class="inputic1" placeholder="Floor surface (m2)" required></Form>
+              </div>
+
+              <div class="seg seg6">a</div>
+
+              <div class="seg seg7">
+                 <Form><label for="room_S-ceiling">Enter ceiling surface (m2)</label><br>
+                    <input type="text" id="room_S-ceiling" name ="room_S-ceiling" class="inputic1" placeholder="Ceiling surface (m2)" required></Form>
+              </div>
+
+              <div class="seg seg8">a</div>
+              
+              <div class="seg seg9">
+                 <Form><label for="room_S-Windows">Enter total windows surface (m2)</label><br>
+                    <input type="text" id="room_S-Windows" name ="room_S-Windows" class="inputic1" placeholder="Total windows surface (m2)" required></Form>
+              </div>
+
+              <div class="seg seg10">a</div>
+
+              <div class="seg seg11">
+                 <Form><label for="room_S-Doors">Enter total Doors surface (m2)</label><br>
+                    <input type="text" id="room_S-Doors" name ="room_S-Doors" class="inputic1" placeholder="Total Doors surface (m2)" required></Form>
+              </div>
+
+              <div class="seg seg12">a</div>
+
+              <div class="seg seg13">
+                 <Form><label for="room_Temp-out">Min. Expected temperature outside (c)</label><br>
+                    <input type="text" id="room_Temp-out" name ="room_Temp-out" class="inputic1" placeholder="Please add value in c" required></Form>
+              </div>
+
+              <div class="seg seg14">a</div>
+
+              <div class="seg seg15">
+                 <Form><label for="room_Temp-in">Desired temperature inside (c)</label><br>
+                    <input type="text" id="room_Temp-in" name ="room_Temp-in" class="inputic1" placeholder="Please add value in c" required></Form>
+              </div>
+
+              <div class="seg seg16">a</div>
+
+              <div class="seg seg17">
+                <Form></Form><label for="btn_NEXT1">Go to the next section</label><br>
+                <button id="btn_NEXT1" class="btn_NEXT1">NEXT</button></Form>
+              </div>
+              <div class="seg seg18">a</div>
+            </div>
+
+
+               </div>
+               </section>
+               <section class="section3">
+                <div class="sc_page2">
+                  <div class="sc_page2_title">Calculate U/R value</div>
+                  <div class="sc_page1_desc">Here we will calculate U/R value for Walls, Floor and Ceiling. U-Value for dors and windows you can get from the manufacterer and include in calculation. Othervise, the standard values will be taken (not affecting significatlly the end result).</div>
+
+                  <div class="room_container"> 
+                    <fieldset>
+                    <div id="dynamic_field">
+                      <div class="form-row" >
+                          <div class="col">
+                              <input type="text" class="form-control" name="durchgefuhrte_arbeiten[]" placeholder="Durchgefuhrte Arbeiten">
+                          </div>
+                          <div class="col">
+                              <input type="text" class="form-control" name="von[]" placeholder="VON">
+                          </div>
+                          <div class="col">
+                              <input type="text" class="form-control" name="bis[]" placeholder="BIS">
+                          </div>
+                          <div class="col">
+                              <input type="text" class="form-control" name="std[]" placeholder="std">
+                          </div>
+
+                          <div class="col">
+                              <td><button type="button" name="add" id="add" class="btn btn-success"><i class="fa fa-plus"></i></button></td>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div id="dynamic_field2">
+                    <div class="form-row">
+
+                        <div class="col">
+                            <input type="text" class="form-control" name="mange[]" placeholder="mange">
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" name="bezeichnung[]" placeholder="bezeichnung">
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" name="art_nr[]" placeholder="art. nr">
+                        </div>
+
+
+                        <div class="col">
+                            <td><button type="button" name="add" id="add2" class="btn btn-success"><i class="fa fa-plus"></i></button></td>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="dynamic_field3">
+                  <div class="form-row">
+                      <div class="col">
+                          <input type="text" class="form-control" name="offene_pukte[]" placeholder="Offene punkte">
+                      </div>
+                      <div class="col">
+                          <input type="text" class="form-control" name="intern[]" placeholder="Intern">
+                      </div>
+
+                      <div class="col">
+                          <td><button type="button" name="add" id="add3" class="btn btn-success"><i class="fa fa-plus"></i></button></td>
+                      </div>
+                  </div>
+              </div>
+              <br>
+              <div class="form-row"><br>
+                  <div class="col">
+                      <button type="submit" id='submit' name="submit" class="btn_NEXT1" value="Save">Save the form data</button>
+                  </div>
+              </div>
+
+                </fieldset>
+                  </div>
+
+                  </div>
+               </section>
+               <section class="section4">Content for section4</section>
+               <section class="section5">Content for section5</section>
+            </div>
+            
+          </div>
+
+          </div>
+          <div class="controls">
+            <ul>
+               <li id="li1" class="selected"></li>
+               <li id="li2">Object details</li>
+               <li id="li3">U/R value</li>
+               <li id="li4"></li>
+               <li id="li5"></li>
+            </ul>
+         </div>
+		</div>
+      <div class="Footer dropshadow" id="Footer">FOOTER CONTENT</div>
+    </div></div>
+  <!-- Page 3_Add input fields--> 
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function () {
+                var i = 1;
+                $('#add').click(function () {
+                    i++;
+                    $('#dynamic_field').append('<div class="form-row" id="row' + i + '"> <div class="col"><input type="text" class="form-control" name="durchgefuhrte_arbeiten[]"> </div> <div class="col"> <input type="text" class="form-control" name="von[]"> </div> <div class="col"> <input type="text" class="form-control" name="bis[]"> </div> <div class="col"> <input type="text" class="form-control" name="std[]"> </div> <div class="col"> <td><button type="button" name="add" class="btn btn-danger btn_remove" id="' + i + '"><i class="fa fa fa-trash"></i></button></td> </div> </div>');
+                });
+                $(document).on('click', '.btn_remove', function () {
+                    var button_id = $(this).attr("id");
+
+                    $('#row' + button_id + '').remove();
+                });
+
+
+
+                $('#add2').click(function () {
+                    i++;
+                    $('#dynamic_field2').append('<div class="form-row"  id="row2' + i + '"> <div class="col"> <input type="text" class="form-control" name="mange[]"> </div> <div class="col"> <input type="text" class="form-control"  name="bezeichnung[]"> </div> <div class="col"> <input type="text" class="form-control" name="art_nr[]"> </div> <div class="col"> <td><button type="button" name="add" class="btn btn-danger btn_remove2" id="' + i + '"><i class="fa fa fa-trash"></i></button></td> </div> </div>');
+                });
+                $(document).on('click', '.btn_remove2', function () {
+                    var button_id = $(this).attr("id");
+
+                    $('#row2' + button_id + '').remove();
+                });
+
+
+                $('#add3').click(function () {
+                    i++;
+                    $('#dynamic_field3').append('<div class="form-row" id="row3' + i + '"> <div class="col"> <input type="text" class="form-control"  name="offene_pukte[]"> </div> <div class="col"> <input type="text" class="form-control" name="intern[]"> </div> <div class="col"> <td><button type="button" name="add"  class="btn btn-danger btn_remove3" id="' + i + '"><i class="fa fa fa-trash"></i></button></td> </div> </div>');
+                });
+                $(document).on('click', '.btn_remove3', function () {
+                    var button_id = $(this).attr("id");
+
+                    $('#row3' + button_id + '').remove();
+                });
+
+
+
+            });
+        </script>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+	<script src="js/jquery-3.4.1.min.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/popper.min.js"></script> 
+  <script src="js/bootstrap-4.4.1.js"></script>
+  <script src="Tool.js"></script>
+
+  </body>
+</html>
